@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/cssTeacherAndStudent.css}" href="../static/css/cssTeacherAndStudent.css">
+
+    <link rel="shortcut icon" href="img/sova.ico" type="image/x-icon">
+
+    <link rel="shortcut icon" th:href="@{/img/sova.ico}" href="../static/img/sova.ico" type="image/x-icon">
+
+    <title th:text="${title}"/>
+</head>
+<body>
+<header>
+    <div class="office-section">
+
+        <div class="nav-section-w">
+
+            <div class="help-section">
+                <div>
+                    <div class="help-img">
+                        <a th:href="@{/main}">
+                            <img th:src="@{img/graduate.png}" alt="student">
+                        </a>
+                    </div>
+                    <div class="help-text">
+                        <div class="help-text-item_u">
+                            <div class="chat_u">Где я?</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Это твой личный кабинет</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Здесь будет находиться информация о твоём курсе, перечень конспектов
+                                и структура изучаемого курса</div>
+                        </div>
+                        <div class="help-text-item_u">
+                            <div class="chat_u">Где я могу найти конспект лекции?</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Для просмотра списка конспектов нажми на кнопку "Конспекты".
+                                Затем выбери дату занятия и повторяй пройденный материал</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="help-copyright">© ko.ler, 2022
+
+            </div>
+        </div>
+
+        <div class="content-section">
+
+            <div class="content-title-w">Портал для обучения</div>
+            <div class="content-text-w">Личный кабинет ученика</div>
+
+            <div class="student-items">
+                <div class="student-item">
+                    <div class="student-edit">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/abstractCourse}">Конспект </a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/studentAccount}">Структура курса </a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/viewHomeworkStudent}">Домашнее задание </a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2>Вы вошли как: [[${#httpServletRequest.remoteUser}]]</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-item">
+                    <div class="logout-btn">
+                        <div class="logout">
+                            <form class="form_logout" th:action="@{/logout}" method="post">
+                                <input type="submit" style="background-color: transparent; border-color: transparent; font-size: 14px; font-weight: 400;" value="Выйти из аккаунта"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container3">
+                <div>
+                    <h2>Конспект лекций</h2>
+                    <h4>Вскоре появится :)</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

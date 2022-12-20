@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+        <link rel="shortcut icon" th:href="@{/img/sova.ico}" href="../static/img/sova.ico" type="image/x-icon">
+        <title th:text="${title}"/>
+    </head>
+    <body>
+        <header th:insert="samples/sampleNavigation :: sampleNavigation"></header>
+        <main>
+            <div class="container2">
+                <div class="title-block">
+                    Курсы
+                </div>
+
+                <div class="block-head2">
+                    <div class="head2-text">Выберите тему для обучения</div>
+                    <div class="head2-input">
+                        <input type="text" placeholder="Поиск по названию">
+                        <img th:src="@{img/search.png}" alt="search">
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="products">
+                        <div class="product">
+                            <div class="product__img">
+                                <img th:src="@{img/111.jpeg}" alt="product" />
+                                <div class="product__img__btn product__img__btn_discount product__img__btn_size_s">
+                                    <h4>Скидка</h4>
+                                </div>
+                            </div>
+                            <div class="product__content">
+                                <div class="product__content__name">
+                                    <p>Средний &#8226; 40 уроков &#8226; 5 мес</p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="product__text">
+                                    Веб-разработка. Верстка сайтов <br>
+                                    Создаем свой сайт-портфолио
+                                </div>
+                                <div class="product__content__price">
+                                    <div class="price price_discount">
+                                        <h3>2 100 РУБ.</h3>
+                                    </div>
+                                    <div class="last-price">
+                                        <h4>2 500 РУБ.</h4>
+                                    </div>
+                                    <div class="product__btn product__btn_active">
+                                        <input type="button" value="Смотреть" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product">
+                            <div class="product__img">
+                                <img th:src="@{img/2222.png}" alt="product">
+                                <div class="product__img__btn product__img__btn_popular product__img__btn_size_s">
+                                    <h4>Популярно</h4>
+                                </div>
+                            </div>
+                            <div class="product__content">
+                                <div class="product__content__name">
+                                    <p>Опытный &#8226; 48 уроков &#8226; 6 мес</p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="product__text">
+                                    Серверное программирование на языке Java. <br>
+                                    Для прохождения достаточно некоторого опыта программирования на Java. Желательно Ultimate IDEA и азы Git.
+                                </div>
+                                <div class="product__content__price">
+                                    <div class="price">
+                                        <h3>2 700 РУБ.</h3>
+                                    </div>
+                                    <div class="product__btn product__btn_active">
+                                        <input type="button" value="Смотреть" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product">
+                            <div class="product__img">
+                                <img th:src="@{img/333.jpeg}" alt="product">
+                            </div>
+                            <div class="product__content">
+                                <div class="product__content__name">
+                                    <p>Новичок &#8226; 24 урока &#8226; 3 мес</p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="product__text">
+                                    Основы языка SQL. Реляционные и нереляционные базы данных <br>
+                                    На курсе по основам SQL вы научитесь работать с такими популярными СУБД как SQLite, MySQL и PostgreSQL.
+                                </div>
+                                <div class="product__content__price">
+                                    <div class="price">
+                                        <h3>1 600 РУБ.</h3>
+                                    </div>
+                                    <div class="product__btn product__btn_active">
+                                        <input type="button" value="Смотреть" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:insert="samples/sampleFooter :: sampleFooter" class="footer"></footer>
+    </body>
+</html>

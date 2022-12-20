@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="samples/sampleHead :: sampleHead">
+        <link rel="stylesheet" th:href="@{/css/swiper-bundle.min.css}" href="../static/css/swiper-bundle.min.css">
+    </head>
+    <body>
+    <header th:insert="samples/sampleNavigation :: sampleNavigation"></header>
+    <main>
+        <div class="title-block">
+            Преподаватели
+        </div>
+        <div class="container2">
+            <div class="teacherInfo">
+                <div class="teacherInfoImg">
+                    <img th:src="@{img/lera.jpg}" class="round" alt="photo teacher">
+                </div>
+                <div class="teacherInfoText">
+                    <div>
+                        Специалист в области разработки высоконагруженных систем и обработки
+                        больших данных. Докладчик крупнейших IT-конференций России. Более 15 лет опыта в IT
+                        — от стартапов до крупных компаний.
+                    </div>
+                    <div class="techText">
+                        Преподаваемые курсы: Серверное программирование
+                    </div>
+                    <div class="techTextLang" style="background-color: orange;">
+                        Java
+                    </div>
+                </div>
+            </div>
+
+            <div class="teacherInfo">
+                <div class="teacherInfoText">
+                    <div>
+                        Специалист в области разработки высоконагруженных систем и обработки
+                        больших данных. Докладчик крупнейших IT-конференций России. Более 15 лет опыта в IT
+                        — от стартапов до крупных компаний.
+                    </div>
+                    <div class="techText">
+                        Преподаваемые курсы: WEB программирование <br>
+                    </div>
+                    <div class="techTextLang" style="background-color: yellow;">
+                        WEB
+                    </div>
+                </div>
+                <div class="teacherInfoImg">
+                    <img th:src="@{img/teacher2.jpg}" class="round" alt="photo teacher">
+                </div>
+            </div>
+
+            <div class="teacherInfo">
+                <div class="teacherInfoImg">
+                    <img th:src="@{img/teacher1.jpg}" class="round" alt="photo teacher">
+                </div>
+                <div class="teacherInfoText">
+                    <div>
+                        Специалист в области разработки высоконагруженных систем и обработки
+                        больших данных. Докладчик крупнейших IT-конференций России. Более 15 лет опыта в IT
+                        — от стартапов до крупных компаний.
+                    </div>
+                    <div class="techText">
+                        Преподаваемые курсы: Программирование баз данных<br>
+                    </div>
+                    <div class="techTextLang" style="background-color: #00bbff;">
+                        SQL
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer th:insert="samples/sampleFooter :: sampleFooter" class="footer"></footer>
+    </body>
+</html>

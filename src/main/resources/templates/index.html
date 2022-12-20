@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <div th:insert="samples/sampleHead :: sampleHead"> </div>
+        <link rel="stylesheet" th:href="@{/css/swiper-bundle.min.css}" href="../static/css/swiper-bundle.min.css">
+    </head>
+    <body>
+        <header class="header lock-padding">
+            <div  th:insert="samples/sampleNavigation :: sampleNavigation"></div>
+            <div class="header-contents">
+                <div class="header-content">
+                    <div class="content-title">
+                        PenTag — школа программирования подростков и не только,
+                        которая поможет реализовать себя и свои идеи
+                    </div>
+                    <div class="content-text">
+                        Учиться с лучшими преподавателями и стать ближе к программированию.
+                        Начни уже сейчас!
+                    </div>
+                    <div class="people-count">
+                        1 000 000 учеников
+                    </div>
+                </div>
+                <div class="title-icon">
+                    <img th:src="@{img/sova.png}" alt="">
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="bc-white">
+                <div class="container">
+<!--                        <p>-->
+<!--                            Окунись с мир информационных технологий вместе с PenTag-->
+<!--                        </p>-->
+                </div>
+            </div>
+            <div class="bc-white">
+                <div class="container">
+                    <div class="offer">
+                        <div class="offer-img">
+                            <img th:src="@{img/offer.gif}" alt="gif picture">
+                        </div>
+                        <ul class="offer-text">
+                            <b>Мы предлагаем</b>
+                            <li>Актуальную информацию в процессе обученния</li>
+                            <li>Бесплатное пробное занятие</li>
+                            <li>Квалифицированных специалистов</li>
+                            <li>Помощь с выполнением домашнего задания</li>
+                            <li>Учебные чаты с регулярной активностью</li>
+                            <li>Выдача сертификатов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="title-block">
+                Курсы
+            </div>
+            <div class="container">
+                <div class="course-items">
+                    <div class="course-item">
+                        <img class="course-img" th:src="@{img/web.png}" alt="">
+                        <div class="course-title">Веб-разработка</div>
+                        <div class="course-text">Вы узнаете как спроектировать сайт с нуля и научитесь создавать
+                            интерактвные сайты.</div>
+                        <button class="course-btn">Подробнее ></button>
+                    </div>
+                    <div class="course-item">
+                        <img class="course-img" th:src="@{img/serverProgr.png}" alt="">
+                        <div class="course-title">Серверное программирование</div>
+                        <div class="course-text">Данный курс подходит для тех, кто любит логические задачки. Курс по
+                            Серверному программированию подразумевает работу с протоколами для передачи данных и данный курс
+                            позволит полноцеено изучить объектно-ориентированное программирование</div>
+                        <button class="course-btn">Подробнее ></button>
+                    </div>
+                    <div class="course-item">
+                        <img class="course-img" th:src="@{img/DB.png}" alt="">
+                        <div class="course-title">Базы данных</div>
+                        <div class="course-text">Основы реляционных баз данных. На курсе вы узнаете как обращаться и
+                            работать с данными.</div>
+                        <button class="course-btn">Подробнее ></button>
+                    </div>
+                </div>
+            </div>
+            <div class="title-block">
+                Ближайший старт
+            </div>
+            <div class="container">
+                <div class="swiper mySwiperIvents">
+                    <div class="course-items ivents swiper-wrapper">
+                        <article class="course-item swiper-slide">
+                            <div class="course-title">Веб-разработка</div>
+                            <div class="course-text">25 августа</div>
+                            <button class="course-btn">Подробнее ></button>
+                        </article>
+                        <article class="course-item swiper-slide">
+                            <div class="course-title">Серверное программирование</div>
+                            <div class="course-text">1 сентября</div>
+                            <button class="course-btn">Подробнее ></button>
+                        </article>
+                        <article class="course-item swiper-slide">
+                            <div class="course-title">Базы данных</div>
+                            <div class="course-text">3 сентября</div>
+                            <button class="course-btn">Подробнее ></button>
+                        </article>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="title-block">
+                Преподаватели
+            </div>
+            <div class="container">
+                <div class="swiper mySwiperTeachers">
+                    <div class="teachers swiper-wrapper">
+                        <article class="teacher swiper-slide">
+                            <div class="teacher-img">
+                                <img th:src="@{img/lera.jpg}" class="round" alt="photo teacher">
+                            </div>
+                            <div class="teacher-text">
+                                <div class="teacher-fio">Кондрашова Валерия</div>
+                                <div class="teacher-lang">Java</div>
+                                <div class="teacher-about">Специалист в области разработки высоконагруженных систем и
+                                    клиент-серверных приложений. Выпускник ведущего ИТ-вуза Беларуси.
+                                    Владение актуальными стеком знаний помогают уверенно держать планку востребованного
+                                    разработчика. Обожает обучать людей и делиться своими знаниями.
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="teacher swiper-slide">
+                            <div class="teacher-img">
+                                <img th:src="@{img/teacher2.jpg}" class="round" alt="photo teacher">
+                            </div>
+                            <div class="teacher-text">
+                                <div class="teacher-fio">Попов Павел</div>
+                                <div class="teacher-lang">JavaScript</div>
+                                <div class="teacher-about">Специалист в области разработки высоконагруженных систем и
+                                    обработки
+                                    больших данных. Докладчик крупнейших IT-конференций России. Более 15 лет опыта в IT
+                                    — от стартапов до крупных компаний.</div>
+                            </div>
+                        </article>
+
+                        <article class="teacher swiper-slide">
+                            <div class="teacher-img">
+                                <img th:src="@{img/teacher1.jpg}" class="round" alt="photo teacher">
+                            </div>
+                            <div class="teacher-text">
+                                <div class="teacher-fio">Белова Светлана</div>
+                                <div class="teacher-lang">SQL</div>
+                                <div class="teacher-about">Специалист в области разработки высоконагруженных систем и
+                                    обработки
+                                    больших данных. Докладчик крупнейших IT-конференций России. Более 15 лет опыта в IT
+                                    — от
+                                    стартапов до крупных компаний.</div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="title-block">
+                <p><a name="faq"></a></p>
+                Часто задаваемые вопросы
+            </div>
+            <div class="container">
+                <div class="spoiler one">
+                    <div class="spoiler-item">
+                        <div class="spoiler-title">Кто мы?</div>
+                        <div class="spoiler-text">Мы молодая команда специалистов, которая обучает всех желающих познать
+                            сферу информационных технологий.
+                        </div>
+                    </div>
+                    <div class="spoiler-item">
+                        <div class="spoiler-title">Как быть, если не можешь определиться с курсом?</div>
+                        <div class="spoiler-text">Оставить заявку на сайте и наш менеджер свяжется с вами и подробно ответит
+                            на Ваши вопросы.</div>
+                    </div>
+                    <div class="spoiler-item">
+                        <div class="spoiler-title">Сколько это стоит?</div>
+                        <div class="spoiler-text">Цены на услуги ниже среднего. Всю подробную информацию о курсе и стоимости
+                            можно узнать в разделе "Курсы."</div>
+                    </div>
+                    <div class="spoiler-item">
+                        <div class="spoiler-title">Сколько дляться курсы?</div>
+                        <div class="spoiler-text">Период учебной программы зависит от выбранного Вами направления. В разделе
+                            "Курсы" вы можете найти всю подробную информацию."</div>
+                    </div>
+                    <div class="spoiler-item">
+                        <div class="spoiler-title">Подходят ли для меня курсы, если ранее не занимался программированием?
+                        </div>
+                        <div class="spoiler-text">Да, конечно. Наша программа рассчитана на учеников любого уровня
+                            подготовки.
+                            На начальных этапах курса мы введем вас в курс дела, с каким стеком технологий мы будет рабоать
+                            и что будем создавать."</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bc-white">
+                <div class="container">
+                    <form class="formApplication" th:action="@{/addApplication}" method="post">
+
+                        <div class="imgApplication">
+                            <!-- <p>Оставь заявку на курс</p> -->
+                            <img src="img/imgApplication.gif" alt="gir picture"><br><br>
+                        </div>
+
+                        <div class="informApplication">
+                            <p>Оставь заявку на курс</p>
+                            <div class="person-input">
+                                <div class="person-input-item">
+                                    <label for="namePerson">Ваше имя </label>
+                                    <input type="text" name="namePerson" id="namePerson" required />
+                                </div>
+                                <div class="person-input-item">
+                                    <label for="numberPerson">Моб. телефон </label>
+                                    <input type="text" name="telephone" id="numberPerson" required />
+                                </div>
+                                <div class="person-input-item">
+                                    <label for="timeValue">В какое время перезвонить? </label>
+                                    <input type="time" id="timeValue" name="timeCall" min="09:00" max="20:00" required />
+                                </div>
+                                <div class="person-input-item">
+                                    <label for="valueCourse">Выберите желаемый курс</label>
+                                    <select id="valueCourse" name="course">
+                                        <option th:each="pos : ${courses}" th:value="${pos.nameCourse}" th:text="${pos.nameCourse}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="buttonApplication" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer th:insert="samples/sampleFooter :: sampleFooter" class="footer"></footer>
+
+        <div id="popup" class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a th:href="@{/}" class="popup__close close-popup">X</a>
+
+                    <div class="job-choice">
+                        <div>
+                            <label class="signup signup-active">Вход</label>
+                        </div>
+                    </div>
+
+                    <div class="signup-choice">
+                        <form th:action="@{/perform-login}" name="test" method="post">
+                            <input type="text" name="username" placeholder="Логин" required/><br>
+                            <input type="password" name="password" placeholder="Пароль" required/>
+
+                            <input type="submit" name="submit" class="submit form__btn" value="Отправить"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script th:src="@{js/swiper-bundle.min.js}" src="../static/js/swiper-bundle.min.js"></script>
+        <script th:src="@{js/jquery-3.6.0.min.js}" src="../static/js/jquery-3.6.0.min.js"></script>
+        <script th:src="@{js/main.js}" src="../static/js/main.js"></script>
+        <script th:src="@{js/popups.js}" src="../static/js/popups.js"></script>
+    </body>
+</html>

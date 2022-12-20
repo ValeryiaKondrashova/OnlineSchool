@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="samples/sampleHeadManager :: sampleHeadManager"></head>
+
+<body>
+<header th:insert="samples/sampleNavigationManager :: sampleNavigationManager" class="header"></header>
+
+<div class="start-page">
+    <div class="container">
+        <br><br><br>
+        <div class="block">
+            <nav th:insert="samples/sampleLeftNavigationManager :: sampleLeftNavigationManager"></nav>
+            <div class="table">
+                <div class="add-text">
+                    <h2>Статиcтика актуальности предлагаемых курсов</h2>
+                    <h3>Столбчатая диаграмма показывает название курса и количество оставленных заявок на этот курс, по которому ведется набор для формирования учебных групп. Данная информация позволит определить какое направление пользуется популярностью </h3>
+                </div>
+                <div id="main" style="width: 400px;height:400px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{js/in.js}" src="../static/js/in.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</body>
+<script type="text/javascript" th:inline="javascript">
+    // Инициализируем компонент ECharts элементом, идентификатор которого является основным
+    let myChart = echarts.init(document.getElementById('main'));
+    // Определяем элементы конфигурации значка
+    let option = {
+        title: {
+            текст: 'Использовать ECharts в Spring Boot'
+        },
+        tooltip: {},
+        // конфигурация оси x
+        xAxis: {
+            data: [[${nameCourses}]]
+        },
+        // конфигурация оси Y
+        yAxis: {},
+        series: [{
+            // Набор данных (также может быть передан из внутреннего контроллера)
+            data: [[${result}]],
+            // Тип графика, здесь используется линия, которая является линейным графиком
+            type: 'bar'
+        }]
+    };
+    myChart.setOption(option);
+</script>
+</html>

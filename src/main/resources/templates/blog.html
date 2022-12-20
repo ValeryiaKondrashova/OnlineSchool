@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+        <link rel="shortcut icon" th:href="@{/img/sova.ico}" href="../static/img/sova.ico" type="image/x-icon">
+        <title th:text="${title}"/>
+    </head>
+    <body>
+        <header th:insert="samples/sampleNavigation :: sampleNavigation"></header>
+        <main>
+            <div class="container2">
+                <div class="block-head">
+                    <div class="head2-text">Блог школы PenTag</div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="products">
+                        <div class="product2">
+                            <div class="product__img2">
+                                <img th:src="@{img/21.jpg}" alt="product">
+                            </div>
+                            <div class="product__content2">
+                                <div class="content2__date">
+                                    <p>01.11.2022</p>
+                                    <p>статьи</p>
+                                </div>
+                                <div class="content2__text">
+                                    Веб-дизайн. Photoshop и Figma
+                                </div>
+                                <div class="product__text">
+                                    Вы познакомитесь с миром веб-дизайна, освоите популярные графические редакторы Photoshop и Figma.
+                                    Научитесь создавать макеты сайтов и сможете сделать свой полноценный проект.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product2">
+                            <div class="product__img2">
+                                <img th:src="@{img/22.jpg}" alt="product">
+                            </div>
+                            <div class="product__content2">
+                                <div class="content2__date">
+                                    <p>16.11.2022</p>
+                                    <p>статьи</p>
+                                </div>
+                                <div class="content2__text">
+                                    Создание веб-сайтов. Программирование HTML и CSS
+                                </div>
+                                <div class="product__text">
+                                    Ученики узнают основу веб-разработки и создания сайтов. Познакомятся с языком гипертекстовой разметки HTML
+                                    как с основой любого сайта и добавят веб-страницам индивидуальности с таблицами стилей CSS.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product2">
+                            <div class="product__img2">
+                                <img th:src="@{img/23.png}" alt="product">
+                            </div>
+                            <div class="product__content2">
+                                <div class="content2__date">
+                                    <p>14.12.2022</p>
+                                    <p>статьи</p>
+                                </div>
+                                <div class="content2__text">
+                                    Компьютерная грамотность для детей
+                                </div>
+                                <div class="product__text">
+                                    Ученики 7-10 лет познакомятся с устройством компьютера и Интернета,
+                                    овладеют техниками быстрой печати, научатся уверенно работать с текстом,
+                                    электронными таблицами и презентациями в популярных программах.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:insert="samples/sampleFooter :: sampleFooter" class="footer"></footer>
+    </body>
+</html>

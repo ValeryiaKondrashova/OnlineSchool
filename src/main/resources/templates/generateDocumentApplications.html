@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="samples/sampleHeadManager :: sampleHeadManager"></head>
+
+<body>
+<header th:insert="samples/sampleNavigationManager :: sampleNavigationManager" class="header"></header>
+
+<div class="start-page">
+    <div class="container">
+        <!--        <div class="aside">-->
+        <!--            &lt;!&ndash;            <div th:insert="samples/sampleSearchUser :: sampleSearchUser"></div>&ndash;&gt;-->
+        <!--        </div>-->
+        <br><br><br>
+        <div class="block">
+            <nav th:insert="samples/sampleLeftNavigationManager :: sampleLeftNavigationManager"></nav>
+            <div class="table">
+                <div class="add-text">
+                    <h2>Выписка о поступивших заявках</h2>
+                    <h3>Создай документ с полной выпиской заявок на курс, которые оставили наши потенциальные клиенты.</h3>
+                </div>
+
+                <div class="add">
+                    <h3 th:text="${message}"></h3>><br>
+                    <form th:action="@{/generateDocumentApplications}" method="post">
+                        <button type="submit">Создать документ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{js/in.js}" src="../static/js/in.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</body>
+</html>

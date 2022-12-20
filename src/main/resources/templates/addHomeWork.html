@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/cssTeacherAndStudent.css}" href="../static/css/cssTeacherAndStudent.css">
+
+    <link rel="shortcut icon" th:href="@{/img/sova.ico}" href="../static/img/sova.ico" type="image/x-icon">
+
+    <title th:text="${title}"/>
+</head>
+
+<body>
+<header>
+    <div class="office-section">
+
+        <div class="nav-section-w">
+
+            <div class="help-section">
+                <div>
+                    <div class="help-img">
+                        <a th:href="@{/}">
+                            <img th:src="@{img/teacher.png}" alt="">
+                        </a>
+                    </div>
+                    <div class="help-text">
+                        <div class="help-text-item_u">
+                            <div class="chat_u">Где я?</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Это ваш личный кабинет как преподавателя</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Здесь вы можете вести учет посещаемости занятий и публиковать домашнее задание для ваших учеников</div>
+                        </div>
+                        <div class="help-text-item_u">
+                            <div class="chat_u">Как я могу дать задание своим ученикам?</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Для публикации домашнего задания перейдите на вкладку "Опубликовать домашнее". Затем выберите группу и загрузите домашнее задание</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="help-copyright">© ko.ler, 2022-
+                <!--<?php echo date('Y') ?> г. -->
+            </div>
+        </div>
+
+        <div class="content-section">
+
+            <div class="content-title-w">Преподаватель школы PenTag</div>
+            <div class="content-text-w">Личный кабинет преподавателя</div>
+
+            <div class="student-items">
+                <div class="student-item">
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/teacherAccount}">Опубликовать домашнее</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/viewHomework}">Просмотреть д/з </a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2>Вы вошли как: [[${#httpServletRequest.remoteUser}]]</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-item">
+                    <div class="logout-btn">
+                        <div class="logout">
+                            <form class="form_logout" th:action="@{/logout}" method="post">
+                                <input type="submit" style="background-color: transparent; border-color: transparent; font-size: 14px; font-weight: 400;" value="Выйти из аккаунта"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-title-w">Добавление домашнего задания группе <p th:text="${numberGroup}"></p></div>
+            <div class="container3">
+                <form th:action="'/addHomework/' + ${idGroup}" method="post">
+                    <label class="label-text">
+                        <p>Домашнее задание:</p>
+                        <input type="text" name="task_homework"><br>
+                    </label>
+                    <label class="label-text">
+                        <p>Количество дней на выполнение:</p>
+                        <input type="text" name="countDays"><br>
+                    </label>
+<!--                    <button type="submit">Опубликовать домашнее задание</button>-->
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <div class="block-12">
+                                <button type="submit">Опубликовать домашнее задание</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+
+</html>

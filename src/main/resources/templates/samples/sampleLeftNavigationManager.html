@@ -1,0 +1,74 @@
+<div th:fragment="sampleLeftNavigationManager">
+    <!--            <div class="nav-table">-->
+    <nav class="accordion arrows">
+        <header class="box">
+            <label for="acc-close" class="box-title">Меню</label>
+        </header>
+        <input type="radio" name="accordion" id="cb1" />
+        <section class="box">
+            <label class="box-title" for="cb1">Ученики</label>
+            <label class="box-close" for="acc-close"></label>
+            <div class="box-content">
+                Раздел для работы с данными об учениках. Перейди на соответствующую вкладку для взаимодействия с данными. <br><br>
+                <li class="nav-item"><a class="a" th:href="@{/viewStudents}">Просмотр учеников</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/addStudent}">Добавить ученика</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/editStudent}">Редактировать ученика</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/deleteStudent}">Удалить ученика</a></li>
+            </div>
+        </section>
+        <input type="radio" name="accordion" id="cb2" />
+        <section class="box">
+            <label class="box-title" for="cb2">Преподаватели</label>
+            <label class="box-close" for="acc-close"></label>
+            <div class="box-content">
+                Раздел для работы с данными о преподавателях. Перейди на соответствующую вкладку для взаимодействия с данными. <br><br>
+                <li class="nav-item"><a class="a" th:href="@{/viewTeachers}">Просмотр преподавателей</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/addTeacher}">Добавить преподавателя</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/editTeachers}">Редактировать преподавателя</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/deleteTeacher}">Удалить преподавателя</a></li>
+            </div>
+        </section>
+        <input type="radio" name="accordion" id="cb3" />
+        <section class="box">
+            <label class="box-title" for="cb3">Статистика</label>
+            <label class="box-close" for="acc-close"></label>
+            <div class="box-content">
+                Раздел для графического отображения данных. Построй столбчатую диаграмму, что поможет в дальнейшем анализе. <br><br>
+                <li class="nav-item"><a class="a" th:href="@{/statisticCourses}">Статистика актуальности</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/statisticBoughtCourses}">Статистика купленных курсов</a></li>
+            </div>
+        </section>
+        <input type="radio" name="accordion" id="cb4" />
+        <section class="box">
+            <label class="box-title" for="cb4">Документы</label>
+            <label class="box-close" for="acc-close"></label>
+            <div class="box-content">
+                Раздел для формирования word-документов по выбранным параметрам. <br><br>
+                <li class="nav-item"><a class="a" th:href="@{/generateDocumentApplications}">Выписка о поступивших заявках</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/generateDocumentStudents}">Выписка об учениках, приступившие к обучению</a></li>
+            </div>
+        </section>
+        <input type="radio" name="accordion" id="cb5" />
+        <section class="box">
+            <label class="box-title" for="cb5">Заявки на курс</label>
+            <label class="box-close" for="acc-close"></label>
+            <div class="box-content">
+                Раздел для работы с поступающими заявками на курс. <br><br>
+                <li class="nav-item"><a class="a" th:href="@{/applications}">Список заявок на курс</a></li>
+                <li class="nav-item"><a class="a" th:href="@{/editApplications}">Редактирование заявок</a></li>
+            </div>
+        </section>
+<!--        <input type="radio" name="accordion" id="cb6" />-->
+<!--        <section class="box">-->
+<!--            <label class="box-title" for="cb6">Прочее</label>-->
+<!--            <label class="box-close" for="acc-close"></label>-->
+<!--            <div class="box-content">-->
+<!--                Раздел "Прочее". <br><br>-->
+<!--                <li class="nav-item"><a class="a" th:href="@{/addStudentGroup}">Добавить учебную группу.</a></li>-->
+<!--            </div>-->
+<!--        </section>-->
+
+        <input type="radio" name="accordion" id="acc-close" />
+    </nav>
+    <!--            </div>-->
+</div>

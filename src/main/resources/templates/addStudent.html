@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="samples/sampleHeadManager :: sampleHeadManager"></head>
+
+<body>
+<header th:insert="samples/sampleNavigationManager :: sampleNavigationManager" class="header"></header>
+
+<div class="start-page">
+    <div class="container">
+        <!--        <div class="aside">-->
+        <!--            &lt;!&ndash;            <div th:insert="samples/sampleSearchUser :: sampleSearchUser"></div>&ndash;&gt;-->
+        <!--        </div>-->
+        <br><br><br>
+        <div class="block">
+            <nav th:insert="samples/sampleLeftNavigationManager :: sampleLeftNavigationManager"></nav>
+            <div class="table">
+                    <div class="add-text">
+                        <h2>Редактирование ученика</h2>
+                        <h3>Все поля являются обязательными.</h3>
+                    </div>
+
+                    <div class="add">
+                        <h3 th:text="${message}"/><br>
+                        <form th:action="@{/addStudent}" method="post">
+                            <div class="add-item">
+                                <p>Фамилия:</p>
+                                <input type="text" name="lastName" placeholder="Введите фамилию ученика" required/><br>
+                            </div>
+                            <div class="add-item">
+                                <p>Имя:</p>
+                                <input type="text" name="firstName" placeholder="Введите имя ученика" required/><br>
+                            </div>
+                            <div class="add-item">
+                                <p>Отчество:</p>
+                                <input type="text" name="patronymic" placeholder="Введите отчество ученика" required/><br>
+                            </div>
+                            <div class="add-item">
+                                <p>Дата рождения:</p>
+                                <input type="date" name="birthday" min="1970-01-01" max="2015-12-31" placeholder="Введите дату рождения ученика" required/><br>
+                            </div>
+                            <div class="add-item">
+                                <p>Эл. почта:</p>
+                                <input type="text" name="email" placeholder="Введите эл.почту ученика" required/><br>
+                            </div>
+                            <div class="add-item">
+                                <p>Моб. телефон:</p>
+                                <input type="text" name="telephone" placeholder="Введите моб. телефон ученика" required/><br>
+                            </div>
+                            <div class="add-item">
+                                <p>Учебная группа:</p>
+                                <select class="select" id="choiceGroup" name="groupStudent">
+                                    <option value="0">Учебная группа</option>
+                                    <option th:each="pos : ${groupStudents}" th:value="${pos.idGroup}" th:text="${pos.groupNumber}"></option>
+                                </select>
+                            </div>
+                            <div class="add-item">
+                                <p>Учетная запись:</p>
+                                <select class="select" id="choiceUserAccount" name="userName">
+                                    <option value="0">Учебная запись</option>
+                                    <option th:each="pos : ${users}" th:value="${pos.username}" th:text="${pos.username}"></option>
+                                </select>
+                            </div>
+                            <input type="submit" value="Добавить ученика"/>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{js/in.js}" src="../static/js/in.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</body>
+</html>

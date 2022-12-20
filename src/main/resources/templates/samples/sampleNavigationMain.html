@@ -1,0 +1,30 @@
+<div th:fragment="sampleNavigationMain">
+    <div class="header-nav">
+        <img class="cloud" th:src="@{img/cloud2.png}" alt="cloud">
+        <div class="logo">
+            <a th:href="@{/main}">
+                <img th:src="@{img/sova.png}" alt="">
+                <h2>PenTag</h2>
+            </a>
+        </div>
+        <ul class="nav-items">
+            <!--            <li class="nav-item"><button><a th:href="@{/managerAccount}">Кабинет Менеджера</a></button></li>-->
+            <li class="nav-item" th:if="${roleUser} == true">
+                <a th:href="@{/managerAccount}"><button class="adm-btn">Менеджер</button></a>
+            </li>
+            <li class="nav-item" th:if="${roleStudent} == true">
+                <a th:href="@{/studentAccount}"><button class="adm-btn">Ученик</button></a>
+            </li>
+            <li class="nav-item" th:if="${roleTeacher} == true">
+                <a th:href="@{/teacherAccount}"><button class="adm-btn">Учитель</button></a>
+            </li>
+            <li class="nav-item" th:if="${roleAdmin} == true">
+                <a th:href="@{/navigationAdmin}"><button class="adm-btn">Администратор</button></a>
+            </li>
+            <form class="form_logout" th:action="@{/logout}" method="post">
+                <li class="nav-item"><h3 th:inline="text">Вы вошли как: [[${#httpServletRequest.remoteUser}]]</h3></li>
+                <input type="image" th:src="@{/img/logout.png}" width="20px" value="Sign out"/>
+            </form>
+        </ul>
+    </div>
+</div>

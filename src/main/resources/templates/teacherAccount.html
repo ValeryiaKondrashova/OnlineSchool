@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/cssTeacherAndStudent.css}" href="../static/css/cssTeacherAndStudent.css">
+
+    <link rel="shortcut icon" th:href="@{/img/sova.ico}" href="../static/img/sova.ico" type="image/x-icon">
+
+    <title th:text="${title}"/>
+</head>
+
+<body>
+<header>
+    <div class="office-section">
+
+        <div class="nav-section-w">
+
+            <div class="help-section">
+                <div>
+                    <div class="help-img">
+                        <a th:href="@{/main}">
+                            <img th:src="@{img/teacher.png}" alt="teacher">
+                        </a>
+                    </div>
+                    <div class="help-text">
+                        <div class="help-text-item_u">
+                            <div class="chat_u">Где я?</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Это ваш личный кабинет как преподавателя</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Здесь вы можете вести учет посещаемости занятий и публиковать домашнее задание для ваших учеников</div>
+                        </div>
+                        <div class="help-text-item_u">
+                            <div class="chat_u">Как я могу дать задание своим ученикам?</div>
+                        </div>
+                        <div class="help-text-item_a">
+                            <div class="chat_a">Для публикации домашнего задания перейдите на вкладку "Опубликовать домашнее". Затем выберите группу и загрузите домашнее задание</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="help-copyright">© ko.ler, 2022-
+                <!--<?php echo date('Y') ?> г. -->
+            </div>
+        </div>
+
+        <div class="content-section">
+
+            <div class="content-title-w">Преподаватель школы PenTag</div>
+            <div class="content-text-w">Личный кабинет преподавателя</div>
+
+            <div class="student-items">
+                <div class="student-item">
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/teacherAccount}">Опубликовать домашнее</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2><a class="a" th:href="@{/viewHomework}">Просмотреть д/з </a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="student-edit block-mini-width">
+                        <div class="block-mini">
+                            <!-- <div class="block-11">
+                                <img src="../img/edit.png">
+                            </div> -->
+                            <div class="block-12">
+                                <h2>Вы вошли как: [[${#httpServletRequest.remoteUser}]]</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-item">
+                    <div class="logout-btn">
+                        <div class="logout">
+                            <form class="form_logout" th:action="@{/logout}" method="post">
+                                <input type="submit" style="background-color: transparent; border-color: transparent; font-size: 14px; font-weight: 400;" value="Выйти из аккаунта"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-title-w">Выберите группу</div>
+            <div class="container3">
+                <div th:each="el : ${groups}">
+                   <a class="a" th:href="'/addHomework/' + ${el.idGroup}"><p th:text="${el.groupNumber}"></p></a>
+                </div>
+<!--                <select class="box" id="valueGroup" name="group">-->
+<!--                    <option th:each="pos : ${groups}" th:value="${pos.groupNumber}" th:text="${pos.groupNumber}"></option>-->
+<!--                </select>-->
+<!--                <table>-->
+<!--                    <tr>-->
+<!--                        <td> idGroup</td>-->
+<!--                        <td> groupNumber</td>-->
+<!--                        <td>startGroup</td>-->
+<!--                        <td>nameCourse</td>-->
+<!--                        <td>nameTeacher</td>-->
+<!--                    </tr>-->
+<!--                    <div th:each="el : ${groups}">-->
+<!--                        <tr>-->
+<!--                            <td> <p th:text="${el.idGroup}"></p></td>-->
+<!--                            <td> <p th:text="${el.groupNumber}"></td>-->
+<!--                            <td><p th:text="${el.startGroup}"></td>-->
+<!--                            <td><p th:text="${el.course.getNameCourse()}"></td>-->
+<!--                            <td><p th:text="${el.teacher.getFirstName()}"></td>-->
+<!--                        </tr>-->
+<!--                    </div>-->
+<!--                </table>-->
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+
+</html>

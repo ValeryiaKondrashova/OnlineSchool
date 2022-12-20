@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="samples/sampleHeadManager :: sampleHeadManager"></head>
+
+<body>
+<header th:insert="samples/sampleNavigationManager :: sampleNavigationManager" class="header"></header>
+
+<div class="start-page">
+    <div class="container">
+<!--        <div class="aside">-->
+<!--&lt;!&ndash;            <div th:insert="samples/sampleSearchUser :: sampleSearchUser"></div>&ndash;&gt;-->
+<!--        </div>-->
+        <br><br><br>
+        <div class="block">
+            <nav th:insert="samples/sampleLeftNavigationManager :: sampleLeftNavigationManager"></nav>
+            <div class="table">
+                <h3>
+                    <table>
+                        <tr><th colspan="5">Список учеников онлайн-школы PenTag</th></tr>
+                        <tr class="th_padding">
+                            <th>ID</th>
+                            <th>Фамилия</th>
+                            <th>Имя</th>
+                            <th>Отчество</th>
+                            <th>Дата рождения</th>
+                            <th>Учебная группа</th>
+                            <th>Учетная запись</th>
+                            <th>Телефон</th>
+                            <th>Эл.почта</th>
+                        </tr>
+                        <div th:each="el : ${students}">
+                            <tr class="td_center">
+                                <td> <p th:text="${el.id}"></p></td>
+                                <td> <p th:text="${el.lastName}"></p></td>
+                                <td> <p th:text="${el.firstName}"></p></td>
+                                <td> <p th:text="${el.patronymic}"></p></td>
+                                <td> <p th:text="${el.birthday}"></p></td>
+                                <td> <p th:text="${el.groupStudent.getGroupNumber()}"></p></td>
+                                <td> <p th:text="${el.userAccountName1.getUsername()}"></p></td>
+                                <td> <p th:text="${el.telephone}"></p></td>
+                                <td> <p th:text="${el.email}"></p></td>
+                            </tr>
+                        </div>
+                    </table>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{js/in.js}" src="../static/js/in.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+</head>
+<body>
+<h1>Привет Всем! Это онлайн-школа программирования для детей и подростков</h1>
+<h2>Список Статусов Заявки</h2>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>id</td>-->
+<!--        <td>nameStatus</td>-->
+<!--    </tr>-->
+<!--    <div th:each="el : ${statusApplications}">-->
+
+<!--        <tr>-->
+<!--            <td> <p th:text="${el.id}"></p></td>-->
+<!--            <td> <p th:text="${el.nameStatus}"></td>-->
+<!--        </tr>-->
+<!--    </div>-->
+<!--</table>-->
+<h2> Создать статус заявки</h2>
+<form th:action="@{/addStatus}" method="post">
+    <input type="text" name="nameStatus" placeholder="Введите статус" required/><br>
+    <button type="submit">Создать статус</button>
+</form>
+<p>--------------------------------------------------------------------------------------------</p>
+<br><br><br>
+
+<h2>Список учебных групп</h2>
+<h2> Создать учебную группу</h2>
+<form th:action="@{/addGroupStudent}" method="post">
+    <input type="text" name="groupNumber" placeholder="Введите номер группы" required/><br>
+    <input type="text" name="startGroup" placeholder="Введите дату старта группы" required/><br>
+    <select id="valueCourse" name="course">
+        <option th:each="pos : ${courses}" th:value="${pos.nameCourse}" th:text="${pos.nameCourse}"></option>
+    </select>
+<!--    <select id="valueTeacher" name="teacher">-->
+<!--        <select id="valueStatus" name="status">-->
+<!--            <option th:each="pos : ${statusApplications}" th:value="${pos.nameStatus}" th:text="${pos.nameStatus}"></option>-->
+<!--        </select>-->
+    <button type="submit">Создать учебную группу</button>
+</form>
+<p>--------------------------------------------------------------------------------------------</p>
+<br><br><br>
+
+<h2>Список Курсов</h2>
+<table>
+    <tr>
+        <td>id</td>
+        <td>nameCourse</td>
+        <td>duration</td>
+        <td>price</td>
+    </tr>
+    <div th:each="el : ${courses}">
+        <tr>
+            <td> <p th:text="${el.id}"></p></td>
+            <td> <p th:text="${el.nameCourse}"></td>
+            <td> <p th:text="${el.duration}"></td>
+            <td> <p th:text="${el.price}"></td>
+        </tr>
+    </div>
+</table>
+<h2> Создать Курс</h2>
+<form th:action="@{/addCourse}" method="post">
+    <input type="text" name="nameCourse" placeholder="Введите название курса" required/><br>
+    <input type="text" name="duration" placeholder="Введите продолжительность" required/><br>
+    <input type="text" name="price" placeholder="Введите цену" required/><br>
+    <button type="submit">Создать курс</button>
+</form>
+<p>--------------------------------------------------------------------------------------------</p>
+<br><br><br>
+
+
+
+<h2>Список заявок</h2>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td> id</td>-->
+<!--        <td> namePerson</td>-->
+<!--        <td>telephone</td>-->
+<!--        <td>timeCall</td>-->
+<!--        <td>nameCourse</td>-->
+<!--        <td>nameStatus</td>-->
+<!--    </tr>-->
+<!--    <div th:each="el : ${applications}">-->
+<!--        <tr>-->
+<!--            <td> <p th:text="${el.id}"></p></td>-->
+<!--            <td> <p th:text="${el.namePerson}"></td>-->
+<!--            <td><p th:text="${el.telephone}"></td>-->
+<!--            <td><p th:text="${el.timeCall}"></td>-->
+<!--            <td><p th:text="${el.course.getNameCourse()}"></td>-->
+<!--            <td><p th:text="${el.status.getNameStatus()}"></td>-->
+<!--        </tr>-->
+<!--    </div>-->
+<!--</table>-->
+<h2> Оформить заявку</h2>
+<form th:action="@{/addApplication}" method="post">
+    <input type="text" name="namePerson" placeholder="Введите ваше имя" required/><br>
+    <input type="text" name="telephone" placeholder="Введите номер телефона" required/><br>
+    <input type="text" name="timeCall" placeholder="Когда позвонить" required/><br>
+    <select id="valueCourse" name="course">
+        <option th:each="pos : ${courses}" th:value="${pos.nameCourse}" th:text="${pos.nameCourse}"></option>
+    </select>
+    <!--    <select id="valueStatus" name="status">-->
+    <!--        <option th:each="pos : ${statusApplications}" th:value="${pos.nameStatus}" th:text="${pos.nameStatus}"></option>-->
+    <!--    </select>-->
+    <button type="submit">Оформить заявку</button>
+</form>
+<p>--------------------------------------------------------------------------------------------</p>
+<br><br><br>
+
+<h2>Список Должностей</h2>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>id</td>-->
+<!--        <td>namePosition</td>-->
+<!--    </tr>-->
+<!--    <div th:each="el : ${positions}">-->
+<!--        <tr>-->
+<!--            <td> <p th:text="${el.id}"></p></td>-->
+<!--            <td> <p th:text="${el.namePosition}"></td>-->
+<!--        </tr>-->
+<!--    </div>-->
+<!--</table>-->
+<h2> Добавить должность</h2>
+<form th:action="@{/addPosition}" method="post">
+    <input type="text" name="namePosition" placeholder="Введите должность" required/><br>
+    <button type="submit">Добавить должность</button>
+</form>
+<p>--------------------------------------------------------------------------------------------</p>
+<br><br><br>
+
+<h2>Список Учителей</h2>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>id</td>-->
+<!--        <td>firstName</td>-->
+<!--        <td>lastName</td>-->
+<!--        <td>patronymic</td>-->
+<!--        <td>birthday</td>-->
+<!--        <td>experience</td>-->
+<!--        <td>telephone</td>-->
+<!--        <td>email</td>-->
+<!--        <td>position</td>-->
+<!--    </tr>-->
+<!--    <div th:each="el : ${teachers}">-->
+<!--        <tr>-->
+<!--            <td> <p th:text="${el.id}"></p></td>-->
+<!--            <td> <p th:text="${el.firstName}"></td>-->
+<!--            <td> <p th:text="${el.lastName}"></td>-->
+<!--            <td> <p th:text="${el.patronymic}"></td>-->
+<!--            <td> <p th:text="${el.birthday}"></td>-->
+<!--            <td> <p th:text="${el.experience}"></td>-->
+<!--            <td> <p th:text="${el.telephone}"></td>-->
+<!--            <td> <p th:text="${el.email}"></td>-->
+<!--            <td> <p th:text="${el.position.getNamePosition()}"></td>-->
+<!--        </tr>-->
+<!--    </div>-->
+<!--</table>-->
+<h2> Добавить учителя</h2>
+<form th:action="@{/addTeacher}" method="post">
+    <input type="text" name="firstName" placeholder="Введите фамилию" required/><br>
+    <input type="text" name="lastName" placeholder="Введите имя" required/><br>
+    <input type="text" name="patronymic" placeholder="Введите отчество" required/><br>
+    <input type="text" name="birthday" placeholder="Введите день рождения" required/><br>
+    <input type="text" name="experience" placeholder="Введите опыт работы" required/><br>
+    <input type="text" name="telephone" placeholder="Введите телефон" required/><br>
+    <input type="text" name="email" placeholder="Введите эл.почту" required/><br>
+    <select id="valuePosition" name="position">
+        <option th:each="pos : ${positions}" th:value="${pos.namePosition}" th:text="${pos.namePosition}"></option>
+    </select>
+    <button type="submit">Добавить учителя</button>
+</form>
+<p>--------------------------------------------------------------------------------------------</p>
+<br><br><br>
+
+
+<!--<h2>Список Групп</h2>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>id</td>-->
+<!--        <td>nameGroup</td>-->
+<!--        <td>course</td>-->
+<!--        <td>startCourse</td>-->
+<!--        <td>teacher</td>-->
+<!--    </tr>-->
+<!--    <div th:each="el : ${groups}">-->
+<!--        <tr>-->
+<!--            <td> <p th:text="${el.id}"></p></td>-->
+<!--            <td> <p th:text="${el.nameGroup.getNameGroup()}"></td>-->
+<!--            <td> <p th:text="${el.course}"></td>-->
+<!--            <td> <p th:text="${el.startCourse}"></td>-->
+<!--            <td> <p th:text="${el.teacher.getTeacher()}"></td>-->
+<!--        </tr>-->
+<!--    </div>-->
+<!--</table>-->
+<!--<h2> Добавить учителя</h2>-->
+<!--<form th:action="@{/addTeacher}" method="post">-->
+<!--    <input type="text" name="firstName" placeholder="Введите номер группы" required/><br>-->
+<!--    <input type="text" name="lastName" placeholder="Введите курс" required/><br>-->
+<!--    <input type="text" name="patronymic" placeholder="Введите начало обучения" required/><br>-->
+<!--    <input type="text" name="birthday" placeholder="Введите учителя" required/><br>-->
+<!--    <input type="text" name="experience" placeholder="Введите опыт работы" required/><br>-->
+<!--    <input type="text" name="telephone" placeholder="Введите телефон" required/><br>-->
+<!--    <input type="text" name="email" placeholder="Введите эл.почту" required/><br>-->
+<!--    <select id="valuePosition" name="position">-->
+<!--        <option th:each="pos : ${positions}" th:value="${pos.namePosition}" th:text="${pos.namePosition}"></option>-->
+<!--    </select>-->
+<!--    <button type="submit">Добавить учителя</button>-->
+<!--</form>-->
+<!--<p>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--<br><br><br>-->
+
+
+<h2>Список сообщений</h2>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>text</th>-->
+<!--        <th>tag</th>-->
+<!--        <th>author</th>-->
+<!--    </tr>-->
+<!--    <div th:each="el : ${messages}">-->
+
+<!--        <tr>-->
+<!--            <td> <p th:text="${el.id}"></p></td>-->
+<!--            <td> <p th:text="${el.text}"></td>-->
+<!--            <td><p th:text="${el.tag}"></td>-->
+<!--            <td><p th:text="${el.author.getNameAuthor()}"></td>-->
+<!--        </tr>-->
+<!--    </div>-->
+<!--</table>-->
+<h2> Добавить сообщение</h2>
+<form th:action="@{/add}" method="post">
+    <input type="text" name="text" placeholder="Введите сообщение" required/><br>
+    <input type="text" name="tag" placeholder="Введите тег" required/><br>
+    <select id="valueAuthor" name="author">
+        <option th:each="pos : ${authors}" th:value="${pos.nameAuthor}" th:text="${pos.nameAuthor}"></option>
+    </select>
+    <button type="submit">Добавить сообщение</button>
+</form>
+</body>
+
+</html>

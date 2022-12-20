@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="samples/sampleHead :: sampleHead"></head>
+    <body>
+        <header th:insert="samples/sampleNavigation :: sampleNavigation"></header>
+        <main>
+            <div class="start-page about">
+                <div>
+                    <div class="head-line-text">
+                        <h1>О нас</h1>
+                    </div>
+                    <div class="sub-text">
+                        <h3>
+                            Наша миссия — обеспечить доступное и действительно качественное индивидуальное образование всем школьникам через интернет. <br><br>
+                            Персонализация образования — будущее, которое наступило уже сегодня. Мы создаем онлайн-школу, собравшую в себя опыт лучших специалистов и самые современные технологии. <br><br>
+                            Каждый человек имеет право на образование, поэтому мы делаем все возможное, чтобы помочь каждому ребенку получить необходимые знания для достойного будущего.<br><br>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="team-photo">
+                    <img class ="img_high" src="img/sova.png" alt="">
+                </div>
+            </div>
+        </main>
+        <footer th:insert="samples/sampleFooter :: sampleFooter" class="footer"></footer>
+    </body>
+</html>

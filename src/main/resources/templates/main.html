@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="samples/sampleHead :: sampleHead"> </div>
+    <link rel="stylesheet" th:href="@{/css/swiper-bundle.min.css}" href="../static/css/swiper-bundle.min.css">
+</head>
+<body>
+<header class="header lock-padding">
+    <div  th:insert="samples/sampleNavigationMain :: sampleNavigationMain"></div>
+    <div class="header-contents">
+        <div class="header-content">
+            <div class="content-title">
+                PenTag — школа программирования подростков и не только,
+                которая поможет реализовать себя и свои идеи
+            </div>
+            <div class="content-text">
+                Учиться с лучшими преподавателями и стать ближе к программированию.
+                Начни уже сейчас!
+            </div>
+            <div class="people-count">
+                1 000 000 учеников
+            </div>
+        </div>
+        <div class="title-icon">
+            <img th:src="@{img/sova.png}" alt="">
+        </div>
+    </div>
+</header>
+
+<footer th:insert="samples/sampleFooter :: sampleFooter" class="footer"></footer>
+
+</body>
+</html>
